@@ -1,0 +1,90 @@
+@import "../../App.scss";
+
+header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    p {
+        display: flex;
+        align-items: center;
+        font-size: 18px;
+        font-weight: bold;
+        color: $darkGrey;
+        cursor: pointer;
+        user-select: none;
+
+        svg {
+            margin-left: 10px;
+            width: 15px;
+        }
+    }
+
+    nav {
+        // display: none;
+        position: absolute;
+        right: 120px;
+        // top: 70px;
+        top: -100%;
+        border: 1px solid $darkGrey;
+        border-radius: 8px;
+        padding: 4px 0px;
+        background-color: white;
+        z-index: 999;
+        transition: all 0.7s ease-in-out;
+        span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-top: 1px solid lightGrey;
+            cursor: pointer;
+
+            &:hover {
+                svg {
+                    stroke: $blue;
+                }
+            }
+            svg {
+                width: 20px;
+                stroke: $darkGrey;
+            }
+        }
+
+        ul {
+            list-style: none;
+            a {
+                color: $darkGrey;
+                text-decoration: none;
+                font-size: 18px;
+
+                li {
+                    margin: 5px 0px;
+                    padding: 4px 24px;
+                    &:hover {
+                        background-color: $lightGrey;
+                    }
+                }
+            }
+            a:last-of-type {
+                color: $red;
+                &:hover {
+                    color: white;
+                    li {
+                        background-color: $red;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 0px 20px;
+        p {
+            font-size: 14px;
+        }
+        nav {
+            right: 20px;
+        }
+    }
+}

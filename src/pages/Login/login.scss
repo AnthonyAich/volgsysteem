@@ -1,0 +1,141 @@
+@import "../../App.scss";
+
+main {
+    img {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    main {
+        img {
+            display: none;
+        }
+    }
+}
+
+.overlayLoader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: white;
+    z-index: -10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: introOverlayAnimation 3s ease-in-out;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+
+    .container {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        transition: all;
+        position: relative;
+        width: fit-content;
+        img {
+            width: 150px;
+            padding: 20px;
+            animation: imageAnimation 1.5s ease-in-out;
+            background-color: white;
+            border-right: 3px solid black;
+            transition: all;
+            display: block;
+            z-index: 999;
+        }
+        h1 {
+            animation: titleAnimation 1.5s ease-in-out;
+            display: block;
+            opacity: 1;
+            transition: all;
+            z-index: 998;
+            font-weight: bold;
+        }
+    }
+}
+
+@keyframes introOverlayAnimation {
+    0% {
+        width: 100%;
+        opacity: 1;
+        display: block;
+        z-index: 999;
+    }
+    75% {
+        opacity: 1;
+        display: block;
+        z-index: 999;
+    }
+    99% {
+        opacity: 0;
+        width: 100%;
+        z-index: 999;
+    }
+    100% {
+        width: 0%;
+        z-index: 999;
+    }
+}
+
+@keyframes imageAnimation {
+    0%,
+    33% {
+        transform: translateX(77.5%);
+        border-right: 3px solid transparent;
+        box-shadow: -100px 0px 0px 0px white;
+    }
+    100% {
+        border-right: 3px solid black;
+        transform: translateX(0%);
+        box-shadow: 0px 0px 0px 0px white;
+    }
+}
+
+@keyframes titleAnimation {
+    0%,
+    33% {
+        transform: translateX(-65%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+
+.errorPopup {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    padding: 20px;
+    color: white;
+    background-color: $red;
+    border-radius: 8px;
+    font-weight: bold;
+    word-spacing: 2px;
+    animation: errorPopupAnimation 8s ease-in-out;
+    animation-delay: 3s;
+    transform: translateY(-150px);
+}
+
+@keyframes errorPopupAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(-150px);
+    }
+    30% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+    70% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-150px);
+    }
+}

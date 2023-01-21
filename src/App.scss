@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800");
+$lightBlue: #f1f8fc;
+$blue: #4ca2d5;
+$darkGrey: #344054;
+$lightGrey: #d0d5dd;
+$yellow: #ffe500;
+$red: #ef4444;
+
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+  font-family: montserrat;
+}
+
+img,
+button,
+input,
+label {
+  user-select: none;
+}
+
+::-moz-selection {
+  /* Code voor Firefox */
+  color: white;
+  background: $darkGrey;
+}
+
+::selection {
+  color: white;
+  background: $darkGrey;
+}
+
+body {
+  background-color: $lightBlue;
+  max-width: 100%;
+}
+
+// header {
+//   display: flex;
+//   align-items: center;
+//   height: 76px;
+//   width: 100%;
+//   padding: 0px 140px;
+//   border-bottom: 1px solid $darkGrey;
+//   background-color: white;
+//   img {
+//     height: 36px;
+//     user-select: none;
+//   }
+// }
+
+main {
+  height: calc(100vh - 77px);
+  width: 100%;
+}
+
+input {
+  width: 100%;
+  height: 40px;
+  border: 1px solid $darkGrey;
+  background-color: $lightBlue;
+  border-radius: 5px;
+  padding: 0px 10px;
+  margin: 10px 0px;
+  &:focus {
+    outline: $blue;
+    border: 1px solid $blue;
+    // box-shadow: 0px 0px 2px $blue;
+  }
+}
+
+// button {
+//   width: 100%;
+//   height: 40px;
+//   border: none;
+//   background-color: $blue;
+//   border-radius: 5px;
+//   padding: 0px 10px;
+//   margin: 10px 0px;
+//   color: white;
+//   font-size: 18px;
+//   font-weight: bold;
+//   cursor: pointer;
+//   &:hover {
+//     box-shadow: 0px 0px 8px $blue;
+//   }
+// }
+
+.block {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 0px 20px;
+    img {
+      height: 30px;
+    }
+  }
+}
+
+.loadingImgTurning {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 500' fill='none'%3E%3Cg id='Group 85'%3E%3Cpath id='Ellipse 19' d='M111.043 82.367C99.6717 68.6494 101.483 48.1083 116.55 38.5973C147.17 19.2678 181.74 6.75015 217.906 2.0686C264.778 -3.9989 312.411 3.34488 355.279 23.2483C398.147 43.1518 434.496 74.7995 460.108 114.521C485.721 154.243 499.549 200.412 499.989 247.673C500.429 294.935 487.463 341.353 462.594 381.545C437.724 421.736 401.972 454.055 359.481 474.753C316.991 495.451 269.503 503.68 222.526 498.486C186.28 494.478 151.482 482.606 120.508 463.85C105.266 454.621 103.073 434.117 114.187 420.19C125.3 406.264 145.506 404.273 161.146 412.808C182.259 424.331 205.506 431.687 229.617 434.353C264.47 438.207 299.701 432.102 331.225 416.746C362.749 401.39 389.274 377.412 407.724 347.594C426.175 317.775 435.795 283.338 435.469 248.274C435.142 213.21 424.883 178.957 405.881 149.488C386.878 120.018 359.912 96.538 328.107 81.7715C296.303 67.005 260.964 61.5566 226.189 66.0581C202.132 69.1723 179.026 76.9601 158.131 88.8738C142.652 97.6991 122.414 96.0845 111.043 82.367Z' fill='%234CA2D5'/%3E%3Cpath id='Ellipse 20' d='M103.799 413.382C92.4726 426.039 72.8611 427.23 61.6889 414.435C45.8376 396.282 32.6584 375.891 22.6005 353.872C8.27222 322.505 0.588509 288.512 0.0324966 254.031C-0.523515 219.55 6.06019 185.327 19.3697 153.513C28.7124 131.182 41.2273 110.376 56.485 91.7219C67.2389 78.5739 86.8786 79.1311 98.6076 91.4172V91.4172C110.337 103.703 109.644 123.048 99.4261 136.617C90.0199 149.109 82.1806 162.754 76.1148 177.253C66.08 201.239 61.1162 227.042 61.5354 253.039C61.9546 279.036 67.7478 304.665 78.5507 328.315C85.0808 342.611 93.356 355.997 103.16 368.179C113.81 381.411 115.126 400.724 103.799 413.382V413.382Z' fill='%23556D7B'/%3E%3C/g%3E%3C/svg%3E");
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 56px;
+  height: 56px;
+  display: block;
+  animation: spin 1s linear infinite;
+  margin: auto auto;
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+.chatBox {
+  display: block;
+}
+
+@media screen and (max-width: 768px) {
+  .chatBox {
+    display: none;
+  }
+}
+
+.animate-bounce {
+  animation-duration: 2s;
+}
+
+.chatButton {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .chatButton {
+    display: flex;
+  }
+}
