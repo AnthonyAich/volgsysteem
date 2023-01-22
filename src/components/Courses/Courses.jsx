@@ -4,7 +4,6 @@ import { addGroup, getMyGroups, searchGroepByName } from '../../api/groups';
 import { useQuery } from '@tanstack/react-query';
 import { useFormik } from 'formik';
 import { useNavigate } from 'react-router-dom';
-import { set } from 'react-hook-form';
 
 const Courses = ({ role }) => {
     const [groups, setGroups] = useState([]);
